@@ -1,0 +1,13 @@
+-> This is a solution to the Linear Decoder exercise in the Stanford UFLDL Tutorial(http://ufldl.stanford.edu/wiki/index.php/Exercise:Learning_color_features_with_Sparse_Autoencoders)
+-> The code has been written in Python using Scipy, Numpy and Matplotlib
+-> The code is bound by The MIT License (MIT)
+
+Running the code:
+
+-> Download the data file 'stlSampledPatches.mat' and the code file 'sparseAutoencoderLinear.py'
+-> Put them in the same folder, and run the program by typing in 'python sparseAutoencoderLinear.py' in the command line
+-> You should get an output similar to the file 'output.png'
+-> The code takes about a day to execute on an i3 processor
+
+Code written by: Siddharth Agrawal
+Email ID: siddharth.950@gmail.com
