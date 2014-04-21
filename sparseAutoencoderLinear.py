@@ -136,7 +136,8 @@ def preprocessDataset(data, num_patches, epsilon):
 
     """ Subtract mean of each patch separately """
 
-    data = data - numpy.mean(data, axis = 1, keepdims = True)
+    mean_patch = numpy.mean(data, axis = 1, keepdims = True)
+    data       = data - mean_patch
     
     """ Compute the ZCA Whitening matrix """
     
@@ -149,7 +150,7 @@ def preprocessDataset(data, num_patches, epsilon):
     
     data = numpy.dot(zca_white, data)
     
-    return data, zca_white
+    return data, zca_white, mean_patch
 
 ###########################################################################################
 """ Loads the image patches from the mat file """
@@ -232,7 +233,7 @@ def executeSparseAutoencoderLinear():
     """ Load the dataset and preprocess using ZCA Whitening """
     
     training_data = loadDataset()
-    training_data, zca_white = preprocessDataset(training_data, num_patches, epsilon)
+    training_data, zca_white, mean_patch = preprocessDataset(training_data, num_patches, epsilon)
     
     """ Initialize the Autoencoder with the above parameters """
     
